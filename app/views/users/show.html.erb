@@ -12,6 +12,16 @@
     <%= @user.username %>'s articles
 </h4>
 
-<div class="card_center" align="middle">
-    <%= render 'articles/article', obj: @user.articles %>
+<%= will_paginate @user_articles %>
+
+<!--
+<div class="center"> 
+    <%= will_paginate @user_articles %>
 </div>
+-->
+
+<div class="card_center" align="middle">
+    <%= render 'articles/article', obj: @user_articles %>
+</div>
+
+<%= will_paginate @user_articles %>

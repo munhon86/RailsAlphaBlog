@@ -1,7 +1,7 @@
 <% obj.each do |article| %>
 <div class="card mt-3 bg-light w-50">
     <div class="card-body">
-        <h1 class="card-title card-title-custom"> Title: <%= article.title %> </h1>
+        <h1 class="card-title card-title-custom"> <%= link_to article.title, article_path(article) %> </h1>
         <!-- <h2 class="card-subtitle mb-2 text-muted">Description</h2> -->
         <p class="card-text description article-body"><%= article.description %></p>
         <p class="card-text article-body-user-info">
@@ -16,6 +16,7 @@
                                             method: :delete, 
                                             data: { confirm: "Are you sure you want to delete the article?"},
                                             class: "btn btn-xs btn-danger" %>
+        
     </div>
 </div>
 
