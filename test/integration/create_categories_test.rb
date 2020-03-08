@@ -21,12 +21,15 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
         get new_category_path
         assert_template 'categories/new'
         assert_no_difference 'Category.count' do
-            post categories_path, params: { category: {name: " "} }
-            #follow_redirect!
-            assert_template 'categories/new'
-            assert_select 'div.card-body'
-            assert_select 'h2.card-title'
-            assert_select 'div.card-text'
+        #post :create, params: { category: {name: "sports"} }
+          
+
+        post categories_path, params: { category: {name: " "} }
+        #follow_redirect!
+        assert_template 'categories/new'
+        assert_select 'div.card-body'
+        assert_select 'h2.card-title'
+        assert_select 'div.card-text'
         end
     
     
